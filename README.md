@@ -31,9 +31,25 @@ npm install
 
 **Having issues installing? See our [debugging guide](https://github.com/electron-react-boilerplate/electron-react-boilerplate/issues/400)**
 
-## Starting Development
+## Starting Development (Web)
+Start the web app in the `dev` environment:
 
-Start the app in the `dev` environment:
+```bash
+npm start:web
+```
+
+## Build (Web)
+Start the web app in the `dev` environment:
+
+```bash
+npm build:web
+cd ./web-server
+npm start
+```
+
+## Starting Development (Electron)
+
+Start the electron app in the `dev` environment:
 
 ```bash
 npm start

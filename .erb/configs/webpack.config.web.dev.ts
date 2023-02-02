@@ -4,6 +4,7 @@
  *
  * https://webpack.js.org/concepts/hot-module-replacement/
  */
+import Dotenv from 'dotenv-webpack';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
@@ -75,7 +76,7 @@ const configuration: webpack.Configuration = {
       },
     ],
   },
-  
+
   plugins: [
     new webpack.HotModuleReplacementPlugin({
       multiStep: true
@@ -98,6 +99,8 @@ const configuration: webpack.Configuration = {
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'development'
     }),
+
+    new Dotenv({ systemvars: true, path: webpackPaths.envPathDev }),
 
     new webpack.LoaderOptionsPlugin({
       debug: true

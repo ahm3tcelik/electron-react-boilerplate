@@ -1,7 +1,7 @@
 /**
  * Build config for electron renderer process
  */
-
+import Dotenv from 'dotenv-webpack';
 import path from 'path';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
@@ -115,6 +115,8 @@ const configuration: webpack.Configuration = {
       NODE_ENV: 'production',
       DEBUG_PROD: false,
     }),
+
+    new Dotenv({ systemvars: true, path: webpackPaths.envPathProd }),
 
     new MiniCssExtractPlugin({
       filename: 'style.css',

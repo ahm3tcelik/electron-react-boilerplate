@@ -1,7 +1,7 @@
 /**
  * Webpack config for production electron main process
  */
-
+import Dotenv from 'dotenv-webpack';
 import path from 'path';
 import webpack from 'webpack';
 import { merge } from 'webpack-merge';
@@ -63,6 +63,8 @@ const configuration: webpack.Configuration = {
       DEBUG_PROD: false,
       START_MINIMIZED: false,
     }),
+
+    new Dotenv({ systemvars: true, path: webpackPaths.envPathProd }),
 
     new webpack.DefinePlugin({
       'process.type': '"browser"',

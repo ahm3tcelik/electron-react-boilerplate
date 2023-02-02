@@ -1,3 +1,4 @@
+import Dotenv from 'dotenv-webpack';
 import 'webpack-dev-server';
 import path from 'path';
 import fs from 'fs';
@@ -142,6 +143,8 @@ const configuration: webpack.Configuration = {
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'development',
     }),
+
+    new Dotenv({ systemvars: true, path: webpackPaths.envPathDev }),
 
     new webpack.LoaderOptionsPlugin({
       debug: true,

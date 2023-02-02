@@ -32,3 +32,6 @@ npm-debug.log.*
 #ENV
 .env
 .env.*
+
+*.lock
+package-lock.json
